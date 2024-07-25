@@ -1,9 +1,14 @@
+import Bookmark from "../Bookmark/Bookmark";
 
 
-const Bookmarks = () => {
+const Bookmarks = ({bookmarks}) => {
     return (
-        <div>
-            <p className="text-2xl">BookMarks</p>
+        <div className="md:w-1/3 bg-gray-400">
+            <h2 className="text-4xl">Bookmark : {bookmarks.length}</h2>
+
+            {
+                bookmarks.map(bookmark => <Bookmark key={bookmark.id} bookmark={bookmark}></Bookmark>)
+            }
         </div>
     );
 };

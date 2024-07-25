@@ -2,7 +2,7 @@
 
 const Header = () => {
     return (
-        <div>
+        <div className="max-w-7xl mx-auto">
            <h1 className='text-4xl'>knowledge-cafe</h1> 
         </div>
     );

@@ -4,7 +4,16 @@ import Blogs from './components/Blogs/Blogs'
 import Bookmarks from './components/Bookmarks/Bookmarks'
 import Header from './components/Header/Header'
 import profile from '../src/assets/images/profile.png'
+import { useState } from 'react'
 function App() {
+  
+  const [bookmarks, setBookmarks] = useState([]);
+
+  const handleAdd = blog =>{
+    console.log(blog)
+    const newBookmarks = [...bookmarks,blog];
+    setBookmarks(newBookmarks);
+  }
 
   return (
     <>
@@ -14,9 +23,10 @@ function App() {
      </div>
       <br />
       <hr />
-      <div className='md:flex justify-between items-center p-4 mx-4'>
-      <Blogs></Blogs>
-      <Bookmarks></Bookmarks>
+      <div className='md:flex justify-between p-4 max-w-7xl mx-auto'>
+      <Blogs handleAdd={handleAdd}
+      ></Blogs>
+      <Bookmarks bookmarks={bookmarks}></Bookmarks>
       </div>
       
    
